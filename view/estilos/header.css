@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --preto:     #0a0a0a;
+        --cinza-esc: #141414;
+        --cinza-med: #2a2a2a;
+        --borda:     #2f2f2f;
+        --laranja:   #e85d04;
+        --laranja-h: #ff6b1a;
+        --texto:     #e8e8e8;
+        --texto-sec: #888;
+    }
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--preto);
+        color: var(--texto);
+    }
+
+    /* ── HEADER ── */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--cinza-esc);
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Logotipo */
+    .logo {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.75rem;
+        letter-spacing: 0.05em;
+        color: var(--texto);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .logo span {
+        color: var(--laranja);
+    }
+
+    /* Navegação */
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    nav a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--texto-sec);
+        text-decoration: none;
+        padding: 0.45rem 0.9rem;
+        border-radius: 6px;
+        transition: color 0.2s, background 0.2s;
+    }
+
+    nav a:hover {
+        color: var(--texto);
+        background: var(--cinza-med);
+    }
+
+    nav a.ativo {
+        color: var(--laranja);
+    }
+
+    /* Separador visual antes de "Meus Aluguéis" */
+    .nav-sep {
+        width: 1px;
+        height: 20px;
+        background: var(--borda);
+        margin: 0 0.5rem;
+    }
+
+    /* Área do usuário logado */
+    .usuario-area {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .usuario-nome {
+        font-size: 0.8rem;
+        color: var(--texto-sec);
+    }
+
+    .usuario-nome strong {
+        color: var(--texto);
+        font-weight: 500;
+    }
+
+    .btn-logout {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--texto-sec);
+        text-decoration: none;
+        padding: 0.4rem 0.85rem;
+        border: 1px solid var(--borda);
+        border-radius: 6px;
+        transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-logout:hover {
+        border-color: var(--laranja);
+        color: var(--laranja);
+    }
+
+    .btn-login {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--preto);
+        background: var(--laranja);
+        text-decoration: none;
+        padding: 0.45rem 1.1rem;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+
+    .btn-login:hover {
+        background: var(--laranja-h);
+    }
+
+    @media (max-width: 768px) {
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 64px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            background: var(--cinza-esc);
+            border-bottom: 1px solid var(--borda);
+            padding: 0.5rem 1rem;
+        }
+
+        nav.aberto { display: flex; }
+
+        nav a { width: 100%; padding: 0.75rem 0.5rem; }
+
+        .nav-sep { display: none; }
+
+        .usuario-area { gap: 0.5rem; }
+        .usuario-nome { display: none; }
+    }
