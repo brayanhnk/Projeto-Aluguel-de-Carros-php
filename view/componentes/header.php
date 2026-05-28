@@ -18,11 +18,11 @@
         <div class="usuario-area">
             <?php if (isset($_SESSION['usuario'])): ?>
                 <span class="usuario-nome">
-                    Olá, <strong><?= htmlspecialchars($_SESSION['usuario']['nome']) ?></strong>
+                    Olá, <strong><?= htmlspecialchars($_SESSION['usuario']) ?></strong>
                 </span>
                 <a href="?p=logout" class="btn-logout">Sair</a>
             <?php else: ?>
-                <a href="?p=login" class="btn-login">Entrar</a>
+                <a href="?p=fazer-login" class="btn-login">Entrar</a>
             <?php endif; ?>
         </div>
 
