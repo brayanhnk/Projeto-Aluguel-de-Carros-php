@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:         #f5f4f0;
+    --branco:     #ffffff;
+    --preto:      #111111;
+    --cinza-esc:  #3a3a3a;
+    --cinza-med:  #6b6b6b;
+    --cinza-cla:  #e8e6e0;
+    --borda:      #dddbd4;
+    --laranja:    #e85d04;
+    --laranja-h:  #ff6b1a;
+    --laranja-bg: #fff3ec;
+    --verde:      #1a7a4a;
+    --verde-bg:   #edf7f2;
+    --sombra:     0 2px 12px rgba(0,0,0,0.07);
+    --sombra-h:   0 8px 32px rgba(0,0,0,0.13);
+    --radius:     14px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--preto);
+    min-height: 100vh;
+}
+
+/* ── Página ── */
+.pagina-sobre {
+    max-width: 1000px;
+    margin: 2rem auto 4rem;
+    padding: 0 2rem;
+}
+
+.container-sobre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.conteudo-sobre {
+    max-width: 500px;
+}
+
+.container-imagens {
+    display: flex;
+    flex-direction: column;
+}
+
+.imagem-sobre {
+    width: 380px;
+    height: 240px;
+    border-radius: var(--radius);
+    object-fit: cover;
+    margin-bottom: 3px;
+    transition: transform 0.5s ease-in;
+    margin-bottom: 1.3rem;
+}
+
+.imagem-sobre:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}

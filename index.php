@@ -10,6 +10,7 @@
     require "./controller/AluguelController.php";
     require "./controller/ContatoController.php";
     require "./controller/VeiculoController.php";
+    require "./controller/SobreNosController.php";
     require_once __DIR__ . "/utilitarios/CsrfUtilitario.php";
 
     include "./view/componentes/header.php";
@@ -22,6 +23,9 @@
     }
     else if($url == 'recuperar-senha'){
         AutenticacaoController::recuperarSenha();
+    }
+    else if($url == 'sobre'){
+        SobreNosController::exibirSobre();
     }
     else if($url == "veiculos") {
         VeiculoController::catalogo($pdo);
