@@ -199,16 +199,16 @@ CREATE TABLE `veiculos` (
 --
 
 INSERT INTO `veiculos` (`id`, `tipo`, `marca`, `modelo`, `ano`, `cor`, `placa`, `categoria`, `preco_diaria`, `disponivel`, `quilometragem`, `imagem`) VALUES
-(1, 'carro', 'Toyota', 'Corolla', 2022, 'Prata', 'BRA2E23', 'intermediario', 210.00, 1, 45000, 'corolla.png'),
-(2, 'carro', 'Honda', 'Civic', 2023, 'Prata', 'GHT3F45', 'intermediario', 220.00, 1, 30000, 'civic.png'),
-(3, 'carro', 'Volkswagen', 'T-Cross', 2022, 'Preto', 'MNO4G67', 'suv', 200.00, 1, 45000, 'tcross.png'),
-(4, 'carro', 'Chevrolet', 'Onix', 2023, 'Azul', 'PQR5H89', 'economico', 110.00, 1, 20000, 'onix.png'),
-(5, 'carro', 'Jeep', 'Compass', 2021, 'Branco', 'STU6I01', 'suv', 250.00, 1, 60000, 'compass.png'),
-(6, 'moto', 'Honda', 'CB 500', 2022, 'Preto', 'VWX7J23', 'esportiva', 180.00, 1, 24000, 'cb500.png'),
-(7, 'moto', 'Yamaha', 'MT-07', 2023, 'Preto', 'YZA8K45', 'esportiva', 230.00, 1, 15000, 'mt07.png'),
-(8, 'moto', 'Honda', 'CG 160', 2021, 'Branco, vermelho e azul', 'BCD9L67', 'utilitaria', 90.00, 1, 60000, 'cg160.png'),
-(9, 'moto', 'Yamaha', 'Fazer 250', 2022, 'Azul', 'EFG0M89', 'utilitaria', 110.00, 1, 30000, 'fazer250.png'),
-(10, 'moto', 'Kawasaki', 'Ninja 400', 2023, 'Preto', 'HIJ1N01', 'esportiva', 260.00, 1, 15000, 'ninja400.png');
+(1, 'carro', 'Toyota', 'Corolla', 2022, 'Prata', 'BRA2E23', 'Intermediário', 210.00, 1, 45000, 'corolla.png'),
+(2, 'carro', 'Honda', 'Civic', 2023, 'Prata', 'GHT3F45', 'Intermediário', 220.00, 1, 30000, 'civic.png'),
+(3, 'carro', 'Volkswagen', 'T-Cross', 2022, 'Preto', 'MNO4G67', 'SUV', 200.00, 0, 45000, 'tcross.png'),
+(4, 'carro', 'Chevrolet', 'Onix', 2023, 'Azul', 'PQR5H89', 'Econômico', 110.00, 1, 20000, 'onix.png'),
+(5, 'carro', 'Jeep', 'Compass', 2021, 'Branco', 'STU6I01', 'SUV', 250.00, 1, 60000, 'compass.png'),
+(6, 'moto', 'Honda', 'CB 500', 2022, 'Preto', 'VWX7J23', 'Esportiva', 180.00, 0, 24000, 'cb500.png'),
+(7, 'moto', 'Yamaha', 'MT-07', 2023, 'Preto', 'YZA8K45', 'Esportiva', 230.00, 1, 15000, 'mt07.png'),
+(8, 'moto', 'Honda', 'CG 160', 2021, 'Branco, vermelho e azul', 'BCD9L67', 'Utilitária', 90.00, 1, 60000, 'cg160.png'),
+(9, 'moto', 'Yamaha', 'Fazer 250', 2022, 'Azul', 'EFG0M89', 'Utilitária', 110.00, 1, 30000, 'fazer250.png'),
+(10, 'moto', 'Kawasaki', 'Ninja 400', 2023, 'Preto', 'HIJ1N01', 'Esportiva', 260.00, 0, 15000, 'ninja400.png');
 
 --
 -- Índices para tabelas despejadas

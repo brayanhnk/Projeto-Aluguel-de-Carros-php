@@ -1,8 +1,7 @@
 <?php 
 
     session_start();
-
-    // var_dump($_GET);
+    
     $url = $_GET['p'] ?? null;
 
     require "./banco.php";    
@@ -38,6 +37,18 @@
     } 
     else if($url == 'confirmar-aluguel') {
         AluguelController::confirmarAluguel($pdo);
+    }
+    else if($url == 'painel') {
+        VeiculoController::painel($pdo);
+    }
+    else if($url == 'cadastrar-veiculo') {
+        VeiculoController::cadastrarVeiculo($pdo);
+    } 
+    else if($url == 'editar-veiculo') {
+        VeiculoController::editarVeiculo($pdo);
+    }
+    else if($url == 'deletar-veiculo') {
+        VeiculoController::deletarVeiculo($pdo);
     }
     else {
         echo "Página não encontrada";

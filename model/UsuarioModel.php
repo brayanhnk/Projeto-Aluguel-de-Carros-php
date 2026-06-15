@@ -52,6 +52,7 @@
                     session_start();
                     $_SESSION['usuario'] = $usuario;
                     $_SESSION['id'] = $usu->id;
+                    $_SESSION['perfil'] = $usu->perfil;
                     return true;
                 } else {
                     return false;

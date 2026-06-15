@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:         #f5f4f0;
+    --branco:     #ffffff;
+    --preto:      #111111;
+    --cinza-esc:  #3a3a3a;
+    --cinza-med:  #6b6b6b;
+    --cinza-cla:  #e8e6e0;
+    --borda:      #dddbd4;
+    --laranja:    #e85d04;
+    --laranja-h:  #ff6b1a;
+    --verde:      #1a7a4a;
+    --verde-bg:   #edf7f2;
+    --vermelho:   #c0392b;
+    --vermelho-bg:#fdf0ee;
+    --sombra:     0 2px 12px rgba(0,0,0,0.07);
+    --radius:     14px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--preto);
+    min-height: 100vh;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.admin-wrapper {
+    max-width: 1100px;
+    margin: 2.5rem auto 5rem;
+    padding: 0 2rem;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.admin-titulo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--preto);
+}
+
+.admin-subtitulo {
+    font-size: 0.875rem;
+    color: var(--cinza-med);
+    margin-top: 0.2rem;
+}
+
+.link-voltar {
+    font-size: 0.85rem;
+    color: var(--laranja);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    transition: color 0.2s;
+}
+.link-voltar:hover { color: var(--laranja-h); }
+
+/* ── Botões ─────────────────────────────────────────────────────────────── */
+.btn-primario {
+    display: inline-block;
+    background: var(--laranja);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.6rem 1.3rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.btn-primario:hover { background: var(--laranja-h); }
+
+.btn-secundario {
+    display: inline-block;
+    background: transparent;
+    color: var(--cinza-esc);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.6rem 1.3rem;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+}
+.btn-secundario:hover { border-color: var(--cinza-esc); color: var(--preto); }
+
+/* ── Alertas ────────────────────────────────────────────────────────────── */
+.alerta {
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+.alerta-ok  { background: var(--verde-bg);   color: var(--verde);   border: 1px solid #b6dfc9; }
+.alerta-erro{ background: var(--vermelho-bg); color: var(--vermelho);border: 1px solid #f0bcb6; }
+
+/* ── Tabela ─────────────────────────────────────────────────────────────── */
+.tabela-wrap {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    overflow-x: auto;
+}
+
+.tabela-admin {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.tabela-admin thead {
+    background: var(--bg);
+    border-bottom: 1px solid var(--borda);
+}
+
+.tabela-admin th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cinza-med);
+    white-space: nowrap;
+}
+
+.tabela-admin td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--cinza-cla);
+    vertical-align: middle;
+    color: var(--cinza-esc);
+}
+
+.tabela-admin tbody tr:last-child td { border-bottom: none; }
+
+.tabela-admin tbody tr:hover { background: #fafaf8; }
+
+.tabela-admin td strong {
+    display: block;
+    color: var(--preto);
+    font-weight: 500;
+}
+
+.tabela-admin td small {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--cinza-med);
+    margin-top: 0.1rem;
+}
+
+.tabela-img {
+    width: 64px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: var(--bg);
+}
+
+.sem-imagem { color: var(--cinza-med); }
+
+.td-id    { color: var(--cinza-med); font-size: 0.8rem; }
+.td-placa { font-family: monospace; font-size: 0.85rem; letter-spacing: 0.05em; }
+
+.badge-disponivel {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+.badge-disponivel.sim { background: var(--verde-bg); color: var(--verde); }
+.badge-disponivel.nao { background: var(--vermelho-bg); color: var(--vermelho); }
+
+.td-acoes {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-acao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+    background: var(--branco);
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-acao.editar:hover  { background: #fff8f0; border-color: var(--laranja); }
+.btn-acao.deletar:hover { background: var(--vermelho-bg); border-color: var(--vermelho); }
+
+/* ── Formulário ─────────────────────────────────────────────────────────── */
+.form-card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    padding: 2rem 2.5rem;
+    box-shadow: var(--sombra);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem 1.5rem;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-grupo label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--cinza-esc);
+}
+
+.form-grupo input,
+.form-grupo select {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--preto);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus { border-color: var(--laranja); }
+
+.form-hint {
+    font-size: 0.78rem;
+    color: var(--cinza-med);
+    margin-top: 0.1rem;
+}
+
+.form-hint code {
+    background: var(--bg);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+}
+
+.form-grupo-check { justify-content: flex-end; }
+
+.label-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--cinza-esc);
+    cursor: pointer;
+}
+
+.label-check input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--laranja);
+    cursor: pointer;
+}
+
+.form-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--cinza-cla);
+}
+
+/* ── Perfil no header ───────────────────────────────────────────────────── */
+.perfil-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+    background: transparent;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.perfil-btn:hover { border-color: var(--laranja); background: #fff8f0; }
+
+.perfil-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--laranja);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.perfil-nome {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--preto);
+}
+
+.perfil-cargo {
+    font-size: 0.7rem;
+    color: var(--laranja);
+    font-weight: 500;
+}
+
+/* ── Responsivo ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .admin-wrapper { padding: 0 1rem; margin-top: 1.5rem; }
+    .form-card { padding: 1.25rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-acoes { flex-direction: column; }
+    .form-acoes .btn-primario,
+    .form-acoes .btn-secundario { width: 100%; text-align: center; }
+}

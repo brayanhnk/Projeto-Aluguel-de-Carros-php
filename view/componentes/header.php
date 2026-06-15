@@ -18,7 +18,11 @@
         <div class="usuario-area">
             <?php if (isset($_SESSION['usuario'])): ?>
                 <span class="usuario-nome">
-                    Olá, <strong><?= htmlspecialchars($_SESSION['usuario']) ?></strong>
+                    <?php if ($_SESSION['perfil'] == 'admin'): ?>
+                        Olá, <strong><a href="?p=painel"><?=htmlspecialchars($_SESSION['usuario'])?></a></strong>
+                    <?php else: ?>
+                        Olá, <strong><?= htmlspecialchars($_SESSION['usuario'])?></strong>
+                    <?php endif; ?>
                 </span>
                 <a href="?p=logout" class="btn-logout">Sair</a>
             <?php else: ?>

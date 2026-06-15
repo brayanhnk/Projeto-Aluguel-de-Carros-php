@@ -36,7 +36,7 @@
                 $dados['quilometragem'],
                 $dados['imagem']
             ]);
-            return $pdo->lastInsertId();
+            return $busca->rowCount();
         }
 
         public static function editarVeiculo($pdo, $id, $dados) {
@@ -82,6 +82,12 @@
                 $categorias[] = $categoria;
             }
             return $categorias;
+        }
+
+        public static function veiculoTemAluguelVinculado($pdo, $id) {
+            $busca = $pdo->prepare("SELECT COUNT(*) FROM alugueis WHERE veiculo_id = ?");
+            $busca->execute([$id]);
+            return $busca->fetchColumn() > 0;
         }
     }
 

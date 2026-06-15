@@ -9,10 +9,9 @@
         }
 
         public static function validarCsrf($token) {
-
-            if(is_null($token) || empty($token) || !hash_equals($_SESSION["csrf_token"], $token)) {
-                http_response_code(403);
-                die('Requisição inválida: token CSRF ausente ou incorreto.');
+            if (is_null($token) || empty($token) || !hash_equals($_SESSION["csrf_token"], $token)) {
+                echo 'Requisição inválida: token CSRF ausente ou incorreto.';
+                exit;
             }
 
             $_SESSION["csrf_token"] = bin2hex(random_bytes(32));

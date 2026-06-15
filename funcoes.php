@@ -68,4 +68,15 @@
         return !empty($erros);
     }
 
+    function requerAdmin() {
+        if (($_SESSION['perfil'] ?? '') !== 'admin') {
+            header('Location: ?p=fazer-login');
+            exit;
+        }
+    }
+
+    function campoVazio($valor) {
+        return is_null($valor) || empty($valor);
+    }
+
 ?>
