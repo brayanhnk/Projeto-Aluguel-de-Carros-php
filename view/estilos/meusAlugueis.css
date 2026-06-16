@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:         #f5f4f0;
+    --branco:     #ffffff;
+    --preto:      #111111;
+    --cinza-esc:  #3a3a3a;
+    --cinza-med:  #6b6b6b;
+    --cinza-cla:  #e8e6e0;
+    --borda:      #dddbd4;
+    --laranja:    #e85d04;
+    --laranja-h:  #ff6b1a;
+    --verde:      #1a7a4a;
+    --verde-bg:   #edf7f2;
+    --vermelho:   #c0392b;
+    --vermelho-bg:#fdf0ee;
+    --amarelo:    #b45309;
+    --amarelo-bg: #fef9e7;
+    --azul:       #1a4fa0;
+    --azul-bg:    #eef3fb;
+    --sombra:     0 2px 12px rgba(0,0,0,0.07);
+    --radius:     14px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--preto);
+    min-height: 100vh;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.alugueis-wrapper {
+    max-width: 1100px;
+    margin: 2.5rem auto 5rem;
+    padding: 0 2rem;
+}
+
+.alugueis-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.alugueis-titulo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--preto);
+}
+
+.alugueis-subtitulo {
+    font-size: 0.875rem;
+    color: var(--cinza-med);
+    margin-top: 0.2rem;
+}
+
+/* ── Alertas ────────────────────────────────────────────────────────────── */
+.alerta {
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+.alerta-ok   { background: var(--verde-bg);    color: var(--verde);    border: 1px solid #b6dfc9; }
+.alerta-erro { background: var(--vermelho-bg); color: var(--vermelho); border: 1px solid #f0bcb6; }
+
+/* ── Estado vazio ───────────────────────────────────────────────────────── */
+.estado-vazio {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    box-shadow: var(--sombra);
+}
+
+.estado-vazio-icone {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.estado-vazio h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.estado-vazio p {
+    font-size: 0.9rem;
+    color: var(--cinza-med);
+    margin-bottom: 1.5rem;
+}
+
+/* ── Tabela ─────────────────────────────────────────────────────────────── */
+.tabela-wrap {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    overflow-x: auto;
+}
+
+.tabela-admin {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.tabela-admin thead {
+    background: var(--bg);
+    border-bottom: 1px solid var(--borda);
+}
+
+.tabela-admin th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cinza-med);
+    white-space: nowrap;
+}
+
+.tabela-admin td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--cinza-cla);
+    vertical-align: middle;
+    color: var(--cinza-esc);
+}
+
+.tabela-admin tbody tr:last-child td { border-bottom: none; }
+.tabela-admin tbody tr:hover { background: #fafaf8; }
+
+.tabela-admin td strong {
+    display: block;
+    color: var(--preto);
+    font-weight: 500;
+}
+
+.tabela-admin td small {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--cinza-med);
+    margin-top: 0.1rem;
+}
+
+.td-id    { color: var(--cinza-med); font-size: 0.8rem; }
+.td-acoes {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+/* ── Badges de status ───────────────────────────────────────────────────── */
+.badge-status {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.badge-status.pendente   { background: var(--amarelo-bg); color: var(--amarelo); }
+.badge-status.ativo      { background: var(--verde-bg);   color: var(--verde); }
+.badge-status.finalizado { background: var(--azul-bg);    color: var(--azul); }
+.badge-status.cancelado  { background: var(--vermelho-bg);color: var(--vermelho); }
+
+/* ── Botões de ação ─────────────────────────────────────────────────────── */
+.btn-acao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 7px;
+    border: 1px solid var(--borda);
+    background: var(--branco);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--cinza-esc);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-acao.editar:hover   { background: #fff8f0; border-color: var(--laranja); color: var(--laranja); }
+.btn-acao.devolver:hover { background: var(--verde-bg); border-color: var(--verde); color: var(--verde); }
+.btn-acao.cancelar:hover { background: var(--vermelho-bg); border-color: var(--vermelho); color: var(--vermelho); }
+
+.btn-primario {
+    display: inline-block;
+    background: var(--laranja);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.6rem 1.3rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.btn-primario:hover { background: var(--laranja-h); }
+
+/* ── Modal de edição ────────────────────────────────────────────────────── */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.modal-overlay.aberto { display: flex; }
+
+.modal-caixa {
+    background: var(--branco);
+    border-radius: var(--radius);
+    padding: 2rem;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    animation: modal-in 0.2s ease;
+}
+
+@keyframes modal-in {
+    from { opacity: 0; transform: translateY(-12px) scale(0.97); }
+    to   { opacity: 1; transform: none; }
+}
+
+.modal-titulo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.modal-sub {
+    font-size: 0.85rem;
+    color: var(--cinza-med);
+    margin-bottom: 1.5rem;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.form-grupo label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--cinza-esc);
+}
+
+.form-grupo input {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--preto);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.form-grupo input:focus { border-color: var(--laranja); }
+
+.modal-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--cinza-cla);
+}
+
+.btn-secundario {
+    display: inline-block;
+    background: transparent;
+    color: var(--cinza-esc);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.6rem 1.3rem;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.btn-secundario:hover { border-color: var(--cinza-esc); }
+
+/* ── Responsivo ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .alugueis-wrapper { padding: 0 1rem; margin-top: 1.5rem; }
+    .modal-caixa { padding: 1.25rem; }
+    .td-acoes { gap: 0.3rem; }
+}
