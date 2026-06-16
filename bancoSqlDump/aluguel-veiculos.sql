@@ -210,6 +210,23 @@ INSERT INTO `veiculos` (`id`, `tipo`, `marca`, `modelo`, `ano`, `cor`, `placa`, 
 (9, 'moto', 'Yamaha', 'Fazer 250', 2022, 'Azul', 'EFG0M89', 'Utilitária', 110.00, 1, 30000, 'fazer250.png'),
 (10, 'moto', 'Kawasaki', 'Ninja 400', 2023, 'Preto', 'HIJ1N01', 'Esportiva', 260.00, 0, 15000, 'ninja400.png');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `mensagens_contato`
+--
+
+CREATE TABLE `mensagens_contato` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `assunto` varchar(150) NOT NULL,
+  `mensagem` text NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
 --
 -- Índices para tabelas despejadas
 --
@@ -297,6 +314,12 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `veiculos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de tabela `mensagens_contato`
+--
+ALTER TABLE `mensagens_contato`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- Restrições para tabelas despejadas
