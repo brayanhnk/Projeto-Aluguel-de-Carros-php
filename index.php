@@ -50,6 +50,18 @@
     else if($url == 'deletar-veiculo') {
         VeiculoController::deletarVeiculo($pdo);
     }
+    else if($url == 'meus-alugueis') {
+        AluguelController::meusAlugueis($pdo);
+    }
+    else if($url == 'devolver-aluguel') {
+        AluguelController::devolverAluguel($pdo);
+    }
+    else if($url == 'alterar-aluguel') {
+        AluguelController::alterarAluguel($pdo);
+    }
+    else if($url == 'cancelar-aluguel') {
+        AluguelController::cancelarAluguel($pdo);
+    }
     else {
         echo "Página não encontrada";
     }
